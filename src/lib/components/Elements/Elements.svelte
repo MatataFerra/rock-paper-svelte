@@ -1,28 +1,30 @@
 <script lang="ts">
+	import { tick } from 'svelte';
+	import { fade } from 'svelte/transition';
+	import {
+		playerElementSelected,
+		randomComputerElement
+	} from '$lib/utils/selectElements';
 	import { pAlt, pSrc, rAlt, rSrc, sAlt, sPos, sSrc } from '$lib/utils/create';
 	import Element from './Element.svelte';
 	import Loader from '../Loader/Loader.svelte';
 	import LoaderLayout from '../Layout/LoaderLayout.svelte';
 	import ElementsLayout from '../Layout/ElementsLayout.svelte';
-	import {
-		playerElementSelected,
-		randomComputerElement
-	} from '$lib/utils/selectElements';
 	import { selectedItems, steps, winner } from '$lib/store';
 	import { setWinner } from '$lib/utils/setWinner';
+	import type { StatesStrategies } from '$lib/types';
 
 	let loading = false;
 
-	const click = (e: CustomEvent) => {
+	const click = async (e: CustomEvent) => {
 		loading = true;
 		const player = playerElementSelected(e);
 		const computer = randomComputerElement();
 
-		const userResult = winner.set(setWinner(e.detail, computer));
-		console.log(
-			'🚀 ~ file: Elements.svelte:22 ~ click ~ STORE winner --',
-			$winner
-		);
+		const userResult: StatesStrategies = setWinner(e.detail, computer);
+
+		await tick();
+		winner.set(userResult);
 
 		selectedItems.set({
 			userSelected: player,

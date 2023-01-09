@@ -39,5 +39,9 @@
 		"vite": "^4.0.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@neoconfetti/svelte": "^1.0.0",
+		"svelte-confetti": "^1.2.2"
+	}
 }
