@@ -17,8 +17,8 @@
 	setTimeout(() => {
 		if ($winner === StatesStrategies.win) {
 			confettiStore.set(true);
-			updateScore($winner);
 		}
+		updateScore($winner as StatesStrategies);
 
 		loading = true;
 	}, 1500);

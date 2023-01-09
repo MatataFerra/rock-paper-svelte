@@ -16,7 +16,6 @@
 	{:else if $steps === 1}
 		<Battle />
 	{/if}
-	<Rules />
 </main>
 
 <style>
