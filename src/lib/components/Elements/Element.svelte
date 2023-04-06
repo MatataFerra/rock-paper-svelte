@@ -22,7 +22,7 @@
 
 <article
 	role="presentation"
-	class="active:scale-95 transition-all cursor-pointer element-size-md md:element-size-sm
+	class="active:scale-95 hover:scale-105 transition-all cursor-pointer element-size-md md:element-size-sm
     z-50 rounded-full shadow-lg flex justify-center items-center justify-items-center
     {positionGrid}
 	{src ? `bg-white border-[16px] ${color}` : 'animate-pulse bg-gray-500'}
