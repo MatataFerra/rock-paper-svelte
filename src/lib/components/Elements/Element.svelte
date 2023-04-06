@@ -13,6 +13,8 @@
 
 	let color = colorElement[strategy as Colors];
 
+	// on:click={onSelection}
+
 	function onSelection() {
 		dispatch('selection', strategy);
 	}
@@ -20,7 +22,7 @@
 
 <article
 	role="presentation"
-	class="transition-all cursor-pointer element-size-md md:element-size-sm
+	class="active:scale-95 transition-all cursor-pointer element-size-md md:element-size-sm
     z-50 rounded-full shadow-lg flex justify-center items-center justify-items-center
     {positionGrid}
 	{src ? `bg-white border-[16px] ${color}` : 'animate-pulse bg-gray-500'}
@@ -28,7 +30,7 @@
     "
 	on:click={onSelection}
 >
-	{#if src}<img {src} {alt} class="w-fit" />
+	{#if src}<img {src} {alt} class="w-fit select-none" />
 	{:else}<div class="w-fit" />{/if}
 
 	<!-- <img {src} {alt} class="w-fit" /> -->

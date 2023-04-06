@@ -3,8 +3,14 @@
 </script>
 
 <header
-	class="items-center rounded-lg border-white border-2 w-10/12 mx-auto my-4 p-4 flex justify-between"
+	class="w-full items-center rounded-lg border-white border-2 mx-auto p-2 flex justify-between"
 >
-	<img src="/logo.svg" alt="logo" class="w-6/12 md:w-2/12" />
+	<img src="/logo.svg" alt="logo" class="w-1/5" />
 	<Score />
 </header>
+
+<style>
+	header {
+		grid-area: header;
+	}
+</style>

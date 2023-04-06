@@ -9,14 +9,14 @@
 
 <section class="flex flex-col justify-center gap-4 w-full">
 	{#if loading}
-		<h1 class="text-center text-5xl font-bold text-white">You {$winner}</h1>
-		<button class="button-28" on:click={reset}>Play Again</button>
+		<h1 class="text-center text-2xl font-bold text-white">You {$winner}</h1>
+		<button class="button-28 text-white" on:click={reset}>Play Again</button>
 	{/if}
 </section>
 
 <style scoped>
 	section {
-		grid-column: 1 / 3;
+		grid-area: buttons;
 	}
 	.button-28 {
 		appearance: none;
@@ -24,7 +24,7 @@
 		border: 2px solid #1a1a1a;
 		border-radius: 15px;
 		box-sizing: border-box;
-		color: #3b3b3b;
+		color: #ffffff;
 		cursor: pointer;
 		display: inline-block;
 		font-family: Roobert, -apple-system, BlinkMacSystemFont, 'Segoe UI',

@@ -49,8 +49,8 @@
 			<p class="text">Drums...</p>
 		</BattleElementsContainer>
 	{/if}
-	<Results {loading} />
 </ElementsLayout>
+<Results {loading} />
 
 <style scoped>
 	.text {
